@@ -1,0 +1,225 @@
+#nav1{
+   
+width: device-width;
+height: 23px;
+flex-shrink: 0;
+background: #00DFA2;
+
+
+
+}
+
+.A1{
+    float: right;  inline-size: 150px;
+    color: #1C1717;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#p1{
+
+    width: 150px;
+height: 77px;
+flex-shrink: 0;
+
+    color: #06151A;
+font-family: Lateef;
+font-size: 20px;
+font-style: bold;
+font-weight: 400;
+line-height: normal;
+text-decoration-line: underline;
+float:left;
+  transform: translate(10%,10%);  
+}
+
+#search{
+
+    width: 288.016px;
+height: 38.924px;
+transform: rotate(-0.022deg);
+flex-shrink: 0;
+background: #8AC5DE; border-radius: 10px;
+transform: translate(120%, 70%);
+}
+
+.search-input{
+    padding: 6px;
+    font-size: 12px;
+    transform: translate(30%, -380%);
+}
+#upload-prescription{
+    width: 172px;
+    height: 36px;
+    flex-shrink: 0;
+    background: #FFB84C; border-radius: 10px;
+    transform: translate(500%, -30%);
+}
+.upload{
+    background: #FFB84C;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+    transform: translate(20%, -350%);
+}
+
+#nav2{
+
+    width: device-width;
+height: 23px;
+flex-shrink: 0;
+background: #0174BE;;
+}
+
+#ul1{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+    float: left;
+  }
+
+  .a2 {
+    display: block;
+    color: #fff;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .dropdown-medicine{
+
+    display: inline-block;
+  }
+
+  .dropdown-medicine{
+
+    display: none;
+    position: absolute;
+    background-color: #090a4a;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .Medicine:hover .dropdown-medicine{
+
+    display: block;
+  }
+
+  .a1{
+
+    color: #fff;
+    font-size: 14px;
+    float: right;  inline-size: 200px;
+  }
+#reg{
+  
+     background: #200E3A;
+      border-radius: 16px;
+      width: 600px;
+height: 1000px;
+flex-shrink: 0;
+float: right;
+transform: translate(-20%, 10%);
+
+
+}
+.la1{
+
+    color: #F9F1F1;
+    font-family: 'Roboto', sans-serif;
+font-size: 24px;
+font-style: bold;
+font-weight: 400;
+line-height: normal;
+inline-size: 150px;
+
+}
+.la2{
+
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.la3{
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+
+}
+.c1{
+    width: 401px;
+height: 48px;
+flex-shrink: 0;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    float:left;
+    
+
+}
+#btn1{
+
+background-color: #FFB84C;
+width: 200px;
+height: 50px;
+
+}
+
+.reg2{
+
+  
+    background:#FFC0D9;
+    border-radius: 16px;
+    width: 600px;
+height: 600px;
+flex-shrink: 0;
+float: left;
+transform: translate(-10%, 20%);
+
+}
+
+.la4{
+    color: #060202;
+    font-family: 'Roboto', sans-serif;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+
+}
+
+.la5{
+
+    color: #060202;
+    font-family: 'Roboto', sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+#signin{
+
+    background-color: #FFB84C;
+    width: 200px;
+    height: 50px;
+
+}

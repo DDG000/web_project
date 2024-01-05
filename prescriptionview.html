@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-panel {
+            width: 40%;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .right-panel {
+            flex: 1;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-panel">
+        <h2>Prescription List</h2>
+        <ul id="prescription-list">
+            <?php
+            // Mock data for prescription list
+            $prescriptions = [
+                ['id' => 1, 'patientFirstName' => 'John', 'patientLastName' => 'Doe'],
+                ['id' => 2, 'patientFirstName' => 'Jane', 'patientLastName' => 'Doe'],
+                // Add more prescription data as needed
+            ];
+
+            // Display prescription items
+            foreach ($prescriptions as $prescription) {
+                echo '<li data-id="' . $prescription['id'] . '">' . $prescription['patientFirstName'] . ' ' . $prescription['patientLastName'] . '</li>';
+            }
+            ?>
+        </ul>
+    </div>
+
+    <div class="right-panel">
+        <h2>Patient Details</h2>
+        <form id="prescription-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input type="hidden" name="prescription_id" id="prescription-id" value="">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="" required>
+
+            <!-- Add other patient details here -->
+
+            <button type="submit">Done</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const prescriptionList = document.getElementById("prescription-list");
+        const prescriptionForm = document.getElementById("prescription-form");
+        const prescriptionIdInput = document.getElementById("prescription-id");
+
+        // Add click event listener to prescription list items
+        prescriptionList.addEventListener("click", function (event) {
+            const listItem = event.target;
+            if (listItem.tagName === "LI") {
+                // Remove active class from all list items
+                const listItems = prescriptionList.querySelectorAll("li");
+                listItems.forEach(item => item.classList.remove("active"));
+
+                // Add active class to the selected item
+                listItem.classList.add("active");
+
+                // Load prescription details into the form
+                const prescriptionId = listItem.getAttribute("data-id");
+                const firstName = listItem.textContent.split(" ")[0];
+                const lastName = listItem.textContent.split(" ")[1];
+
+                prescriptionIdInput.value = prescriptionId;
+                document.getElementById("first_name").value = firstName;
+                document.getElementById("last_name").value = lastName;
+            }
+        });
+    });
+</script>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Handle form submission and database update here
+    // Remember to include proper security measures
+
+    $prescriptionId = $_POST['prescription_id'];
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+
+    // Process the data as needed, for example, insert into a database
+    // ...
+
+    // Redirect or display a success message
+    echo "<script>alert('Prescription marked as done!');</script>";
+}
+?>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<style>
+        /* Add your styles here */
+        .box {
+            text-align: center;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+        }
+
+        .txt {
+            display: none;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    </style>

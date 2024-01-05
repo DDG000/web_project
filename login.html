@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>login page</title>
+    <link rel="stylesheet" href="login.css">
+
+
+
+</head>
+
+<body>
+
+    <form action="http://localhost/project/register.php" method="post">
+        <nav id="nav1">
+            <a href="" class="A1">Telephone</a>
+            <a href="" class="A1">Branches</a>
+            <a href="" class="A1">My Account</a>
+
+
+        </nav>
+        <p id="p1">HEALTHCARE<br>
+            PHARMACY</p>
+
+        <div id="search">
+            <input type="text" class="search-input" placeholder="Search...">
+        </div>
+
+        <div id="upload-prescription">
+
+            <button class="upload">Upload Prescription</button>
+        </div>
+
+        <nav id="nav2">
+            <ul id="ul1">
+                <li class="Medicine">
+                    <a class="a1">MEDICINE</a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">HEART</a>
+                        <a class="a2" href="">CENTRAL NERVOUS SYSTEM</a>
+                        <a class="a2" href=""> EAR, NOSE, THROAT</a>
+                        <a class="a2" href=""> DIABETES</a>
+                        <a class="a2 " href="">EYE</a>
+                        <a class="a2" href=""> GASTRO INTESTINAL SYSTEM</a>
+                        <a class="a2" href="">
+                            MALIGNANT DISEASE & IMMUNOSUPPRESSIONS</a>
+                        <a clsss="a2" href="">MUSCLE & JOINT</a>
+
+
+                    </div>
+
+
+                </li>
+                <li class="Medicine">
+                    <a class="a1">MEDICAL DEVICES </a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">FIRST AID</a>
+                        <a class="a2" href="">HEALTH DEVICES</a>
+                        <a class="a2" href=""> SUPPORTS & BRACES</a>
+
+
+
+                    </div>
+
+
+                </li>
+                <li class="Medicine">
+                    <a class="a1">WELLNESS</a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">MOTHER & BABY</a>
+                        <a class="a2" href="">COUGH, COLD & ALLERGY</a>
+                        <a class="a2" href="">DIET & NUTRITION</a>
+                        <a class="a2" href=""> BEAUTY SUPPLEMENTS</a>
+                        <a class="a2 " href="">ADULT & DIABETIC CARE</a>
+                        <a class="a2" href=""> PREVENTIVE CARE</a>
+                        <a class="a2" href="">
+                            PAIN & FEVER</a>
+                        <a clsss="a2" href="">EYES & EARS</a>
+
+
+
+
+                    </div>
+
+
+                </li>
+
+                </li>
+                <li class="Medicine">
+                    <a class="a1">PERSONAL CARE</a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">NOURISHMENT</a>
+                        <a class="a2" href="">ACCESSORIES</a>
+                        <a class="a2" href="">SKIN CARE</a>
+                        <a class="a2" href=""> HAND & FOOT CARE</a>
+
+                    </div>
+
+
+                </li>
+                <li class="Medicine"> <a class="a1" href="">GNC</a></li>
+                <li class="Medicine"> <a class="a1" href="">SWISSE</a></li>
+
+
+            </ul>
+
+
+        </nav>
+
+        <div id="reg">
+            <br>
+            <ul>
+                <label class="la1"> Is this your first time ?</label>
+                <br>
+                <br>
+                <br>
+
+                <label class="la2">Fill in following information to upload Prescription.</label>
+                <br><br>
+                <label class="la3">First Name :</label><br>
+                <input type="text" class="c1" name="Fname" placeholder="......." required>
+                <br><br> <br> <br>
+                <label class="la3">Last Name :</label><br>
+                <input type="text" class="c1" name="Lname" placeholder="......." required>
+                <br><br><br><br>
+
+                <label class="la3">Telephone Number:</label><br>
+                <input type="tel" class="c1" name="telephone" required>
+                <br><br> <br> <br>
+
+                <label class="la3">E mail :</label><br>
+                <input type="email" class="c1" name="email" required>
+                <br><br> <br> <br>
+
+                <label class="la3">Street Address :</label><br>
+                <input type="text" class="c1" name="sadd" placeholder="......." required>
+                <br><br><br><br>
+                <label class="la3">City :</label><br>
+                <input type="text" class="c1" name="city" placeholder="......." required>
+                <br><br><br><br>
+
+                <label class="la3">Password :</label><br>
+                <input type="password" class="c1" id="password" name="password" placeholder="......" required>
+                <br><br><br><br>
+
+                <label class="la3">Confirm Password :</label><br>
+                <input type="password" class="c1" id="cpassword" name="cpassword" placeholder="......" required>
+                <br><br><br><br>
+
+                <span id="message"></span><br><br>
+                <input type="submit" id="btn1" onclick="IDIncrement()">Submit
+
+
+                <script>
+                    function IDIncrement() {
+
+                        comparePasswords();
+
+                        var counterInput = document.getElementById("00000");
+
+                        if (counterInput) { // Check if the element is found
+                            var currentValue = parseInt(counterInput.value);
+                            var newValue = currentValue + 1;
+                            counterInput.value = newValue;
+
+                            // Set the incremented value to the hidden input field
+                            document.getElementById("incrementedValue").value = newValue;
+
+                            // Submit the form
+                            document.getElementById("myForm").submit();
+                        } else {
+                            console.error("Element with ID '00000' not found");
+                        }
+                    }
+
+
+                    function comparePasswords() {
+
+                        var password = document.getElementById("password").value;
+                        var cpassword = document.getElementById("cpassword").value;
+                        var message = document.getElementById("message");
+
+                        if (password === cpassword) {
+                            message.innerHTML = "Passwords match!";
+                            message.style.color = "green";
+
+
+                        } else {
+                            message.innerHTML = "Passwords do not match!";
+                            message.style.color = "red";
+                        }
+                    }
+
+
+                    document.getElementById("password").addEventListener("input", comparePasswords);
+                    document.getElementById("cpassword").addEventListener("input", comparePasswords);
+                </script>
+
+            </ul>
+
+
+
+
+
+
+
+        </div>
+    </form>
+
+    <form action="http://localhost/project/select.php" method="post">
+
+        <div class="reg2">
+            <ul>
+                <label class="la4">Alredy User :</label>
+                <br><br><br>
+                <label class="la5">If you have an account with us, log in using your email address.</label>
+                <br><br><br>
+                <lable class="la5">Email / Phone number *</lable><br>
+                <input type="email" name="regemail" class="c1" required>
+                <br><br> <br><br>
+                <label class="la5">Password *</label><br>
+                <input type="password" name="regpassword" class="c1" required>
+                <input type="submit" id="signin" name="signin">
+
+            </ul>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

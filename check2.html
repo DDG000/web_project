@@ -1,0 +1,198 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+<title>Load Prescription Images</title>
+</head>
+<body>
+
+<h2>Load Images by Prescription Date</h2>
+
+<form action="imageview.php" method="POST">
+  <label for="prescriptionDate">Enter Prescription Date (YYYY-MM-DD):</label>
+  <input type="date" id="prescriptionDate" name="prescriptionDate" required>
+  <button type="submit">Load Images</button>
+</form>
+
+</body>
+</html>   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Prescriptions Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #063e6c;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .dashboard {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .patient-name-bar {
+      background-color: #063e6c;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-patient-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-patient-list li {
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.3s; /* Add smooth transition */
+    }
+
+    .sidebar-patient-list li:hover {
+      text-decoration: underline;
+    }
+
+    .selected-patient {
+      background-color: #225522; /* Change this color to your preferred color */
+      color: #fff;
+    }
+
+    .prescription-list {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .prescription-list th, .prescription-list td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer; /* Add cursor pointer for better UX */
+    }
+
+    .prescription-list th {
+      background-color: #063e6c;
+      color: #fff;
+    }
+
+    .selected-row {
+      background-color: #f5f5f5;
+    }
+
+    .details-container {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>e-Prescriptions Dashboard</h1>
+  </header>
+
+  <nav>
+    <a href="#">Dashboard</a>
+    <a href="#">Patients</a>
+    <a href="#">Prescriptions</a>
+    <a href="#">Pharmacy</a>
+    <!-- Add more links as needed -->
+  </nav>
+
+  <div class="dashboard">
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <ul class="sidebar-patient-list">
+        <li data-patient-id="1">John Doe</li>
+        <li data-patient-id="2">Jane Doe</li>
+        <!-- Add more patients as needed -->
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="patient-name-bar">
+        <span id="selected-patient-name">Selected Patient Name</span>
+      </div>
+
+      <h2>Prescription List</h2>
+      <table class="prescription-list">
+        <!-- Your prescription list content goes here -->
+      </table>
+
+      <div class="details-container">
+        <!-- Details will be displayed here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var patientListItems = document.querySelectorAll('.sidebar-patient-list li');
+      var selectedPatientName = document.getElementById('selected-patient-name');
+      var detailsContainer = document.querySelector('.details-container');
+
+      patientListItems.forEach(function (patientItem) {
+        patientItem.addEventListener('click', function () {
+          // Remove the 'selected-patient' class from all items
+          patientListItems.forEach(function (item) {
+            item.classList.remove('selected-patient');
+          });
+
+          // Add the 'selected-patient' class to the clicked item
+          patientItem.classList.add('selected-patient');
+
+          // Get the patient ID and name from the data attributes
+          var patientId = patientItem.getAttribute('data-patient-id');
+          var patientName = patientItem.textContent;
+
+          // Update the patient name bar
+          selectedPatientName.textContent = patientName;
+
+          // Display patient details (replace this with your logic)
+          detailsContainer.innerHTML = '<h2>Patient Details</h2>' +
+            '<p>Patient ID: ' + patientId + '</p>' +
+            '<p>Other details go here.</p>';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

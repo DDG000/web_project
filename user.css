@@ -1,0 +1,204 @@
+#nav1{
+   
+    width: device-width;
+    height: 23px;
+    flex-shrink: 0;
+    background: #00DFA2;
+    
+    
+    
+    }
+    
+    .A1{
+        float: right;  inline-size: 150px;
+        color: #1C1717;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    #p1{
+    
+        width: 150px;
+    height: 77px;
+    flex-shrink: 0;
+    
+        color: #06151A;
+    font-family: Lateef;
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    float:left;
+      transform: translate(10%,10%);  
+    }
+    
+    #search{
+    
+        width: 288.016px;
+    height: 38.924px;
+    transform: rotate(-0.022deg);
+    flex-shrink: 0;
+    background: #8AC5DE; border-radius: 10px;
+    transform: translate(120%, 70%);
+    }
+    
+    .search-input{
+        padding: 6px;
+        font-size: 12px;
+        transform: translate(30%, -380%);
+    }
+    #upload-prescription{
+        width: 172px;
+        height: 36px;
+        flex-shrink: 0;
+        background: #FFB84C; border-radius: 10px;
+        transform: translate(500%, -30%);
+    }
+    .upload{
+        background: #FFB84C;
+        color: #000;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        
+        transform: translate(20%, -350%);
+    }
+    
+    #nav2{
+    
+        width: device-width;
+    height: 23px;
+    flex-shrink: 0;
+    background: #0174BE;;
+    }
+    
+    #ul1{
+    
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li {
+        float: left;
+      }
+    
+      .a2 {
+        display: block;
+        color: #fff;
+        text-align: left;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+    
+      .dropdown-medicine{
+    
+        display: inline-block;
+      }
+    
+      .dropdown-medicine{
+    
+        display: none;
+        position: absolute;
+        background-color: #090a4a;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+    
+      .Medicine:hover .dropdown-medicine{
+    
+        display: block;
+      }
+    
+      .a1{
+    
+        color: #fff;
+        font-size: 14px;
+        float: right;  inline-size: 200px;
+      }
+    #reg{
+      
+         background: #200E3A;
+          border-radius: 16px;
+          width: 600px;
+    height: 1000px;
+    flex-shrink: 0;
+    float: right;
+    transform: translate(-20%, 10%);
+    
+    
+    }
+
+
+
+
+
+
+
+
+
+
+.img{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.box{
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+    border-radius: 12px;
+    background: #0F2167;
+    height: 1200px;
+    width: 850px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: baseline;
+   
+}
+
+.circle{
+    background-color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    font-size: 10px;
+    line-height: 90px;
+    margin: 37px;
+    float: left;
+}
+
+.txt {
+    color: white;
+    font-size: 14px;
+    text-align: 50px;
+    line-height: 450px;
+}
+ 
+.image {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 450px;
+    float: left;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 10px;
+}

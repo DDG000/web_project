@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Prescription Upload</title>
+    <link rel="stylesheet" href="p_last.css">
+</head>
+
+<body>
+    
+        <nav id="nav1">
+            <a href="" class="A1">Telephone</a>
+            <a href="" class="A1">Branches</a>
+            <a href="" class="A1">My Account</a>
+
+
+        </nav>
+        <p id="p1">HEALTHCARE<br>
+            PHARMACY</p>
+
+        <div id="search">
+            <input type="text" class="search-input" placeholder="Search...">
+        </div>
+
+
+        <nav id="nav2"  style=" width: device-width;">
+            <ul id="ul1">
+                <li class="Medicine">
+                    <a class="a1">MEDICINE</a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">HEART</a>
+                        <a class="a2" href="">CENTRAL NERVOUS SYSTEM</a>
+                        <a class="a2" href=""> EAR, NOSE, THROAT</a>
+                        <a class="a2" href=""> DIABETES</a>
+                        <a class="a2 " href="">EYE</a>
+                        <a class="a2" href=""> GASTRO INTESTINAL SYSTEM</a>
+                        <a class="a2" href="">
+                            MALIGNANT DISEASE & IMMUNOSUPPRESSIONS</a>
+                        <a clsss="a2" href="">MUSCLE & JOINT</a>
+
+
+                    </div>
+
+
+                </li>
+                <li class="Medicine">
+                    <a class="a1">MEDICAL DEVICES </a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">FIRST AID</a>
+                        <a class="a2" href="">HEALTH DEVICES</a>
+                        <a class="a2" href=""> SUPPORTS & BRACES</a>
+
+
+
+                    </div>
+
+
+                </li>
+                <li class="Medicine">
+                    <a class="a1">WELLNESS</a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">MOTHER & BABY</a>
+                        <a class="a2" href="">COUGH, COLD & ALLERGY</a>
+                        <a class="a2" href="">DIET & NUTRITION</a>
+                        <a class="a2" href=""> BEAUTY SUPPLEMENTS</a>
+                        <a class="a2 " href="">ADULT & DIABETIC CARE</a>
+                        <a class="a2" href=""> PREVENTIVE CARE</a>
+                        <a class="a2" href="">
+                            PAIN & FEVER</a>
+                        <a clsss="a2" href="">EYES & EARS</a>
+
+
+
+
+                    </div>
+
+
+                </li>
+
+                </li>
+                <li class="Medicine">
+                    <a class="a1">PERSONAL CARE</a>
+                    <div class="dropdown-medicine">
+                        <a class="a2" href="">NOURISHMENT</a>
+                        <a class="a2" href="">ACCESSORIES</a>
+                        <a class="a2" href="">SKIN CARE</a>
+                        <a class="a2" href=""> HAND & FOOT CARE</a>
+
+                    </div>
+
+
+                </li>
+                <li class="Medicine"> <a class="a1" href="">GNC</a></li>
+                <li class="Medicine"> <a class="a1" href="">SWISSE</a></li>
+
+
+            </ul>
+
+
+        </nav>
+
+        <ul class="h">
+
+            <li id="h3">Prescription Upload</li>
+            <li id="h5">
+                Please upload an image of your medical prescription issued by a SLMC registered doctor.
+                <br>
+                <br>
+                Prescription drugs will only be issued if a valid prescription image is provided.
+            </li><br><br><br>
+            <li id="h4">
+                Enter the prescription items Cand qty. Eg : Crestor 5mg – 10 Qty / 
+                Crestor 10mg – 10 Qty
+            </li>
+
+            <li id="h7">Select a JPG/PNG/PDF file.Once selected,your prescription image
+                file is shown above.</li>
+            <div id="upload-container">
+               
+                <form action="http://localhost/project/prescription_records.php" method="post"  enctype="multipart/form-data" >
+                    <li id ="h6">Choose an image:</li>
+
+                    <li id="emailcheck">Enter your Email :</li><br>
+                    <input type="text" name="echeck" id="Em"><br>
+                   
+                    <input type="file" id="image-upload" name="prescriptionPhoto"  required  accept=".jpg ,.jpeg ,.png , image/*">
+                    <input type="submit" value="Submit Prescription"  id="btn">
+
+                </form>
+                <div id="preview-container">
+                    <h3 id="h0">Preview:</h3>
+                    <img id="preview-image" src="#" alt="Preview">
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('image-upload').addEventListener('change', function() {
+                    previewImage(this);
+                });
+        
+                function previewImage(input) {
+                    var preview = document.getElementById('preview-image');
+                    var file = input.files[0];
+                    var reader = new FileReader();
+        
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                    };
+        
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    } else {
+                        preview.src = '#';
+                    }
+                }
+            </script>
+
+
+<div id="payment-options">
+    <h2>Payment Options</h2>
+
+    <div id="payment-methods">
+        <div class="payment-method">
+            <input type="radio" id="online-payment" name="payment-method" value="online" onclick="showModal()">
+            <label for="online-payment">Online Payment</label>
+        </div>
+
+        <div class="payment-method">
+            <input type="radio" id="cash-on-delivery" name="payment-method" value="cod">
+            <label for="cash-on-delivery">Cash on Delivery</label>
+            <!-- Provide instructions for cash on delivery -->
+            <p>Pay with cash when your order is delivered to your doorstep.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal overlay -->
+<div id="overlay" onclick="hideModal()">
+    <!-- Modal content -->
+    <div id="modal" onclick="event.stopPropagation()">
+        <!-- Online Payment Form (Placeholder) -->
+        <form id="online-payment-form" action="process-payment.php" method="post">
+            <label id="l1">Enter Email:</label>
+            <input type="email" id="cardemail" name="cardemail" required><br><br>
+          
+            <div id="card-details">
+              <label id="l1" for="card-number">Card Number:</label>
+              <input type="text" id="card-number" name="card-number" required><br><br>
+              <label id="l1" for="expiry-date">Expiry Date:</label>
+              <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required><br><br>
+              <label id="l1" for="cvv">CVV:</label>
+              <input type="text" id="cvv" name="cvv" required><br><br>
+            </div>
+          
+            <input type="submit" value="Submit Payment">
+          </form>
+          
+        <!-- End Online Payment Form -->
+        <!-- Close button -->
+        <br><br>
+        <button onclick="hideModal()">Close</button>
+    </div>
+</div>
+
+<script>
+    function showModal() {
+        // Show the overlay and modal when the user selects online payment
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('online-payment-form').style.display = 'block';
+    }
+
+    function hideModal() {
+        // Hide the overlay and modal
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('online-payment-form').style.display = 'none';
+    }
+</script>
+        </ul>
+
+
+
+
+
+      
+ 
+</body>
+
+</html>
